@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Adding a Flash Movie</title>
+        <!--
+        <script type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js">
+        </script>
+        -->
+        <script type="text/javascript" src="js/swfobject.js"></script>
+        <script type="text/javascript">
+            console.log('hello');
+            swfobject.embedSWF("flash/bird.swf", "bird", "400", "300", "8.0.0");
+            console.log('world');
+        </script>
+    </head>
+    <body>
+        <div id="bird">
+            <p>An animation of a bird taking a shower</p>
+            <a href="https://get.adobe.com/flashplayer">Enable Flash</a>
+        </div>
+        <!--
+        <br />
+        <object type="application/x-shockwave-flash" data="flash/bird.swf"
+            width="400" height="300">
+            <param name='movie' value="flash/bird.swf"/>
+            <param name='bgcolor' value="#999999"/>
+            <param name='FlashVars' value="var1=Hello&var2=Goodbye" />
+            <param name='allowscriptaccess' value="sameDomain"/>
+        </object>
+        -->
+    </body>
+</html>

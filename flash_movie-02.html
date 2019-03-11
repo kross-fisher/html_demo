@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Adding a Flash Video</title>
+        <script src="js/swfobject.js"></script>
+        <script>
+            var flashvars = {};
+            var params = { movie: "../video/hotel.flv" };
+            swfobject.embedSWF("flash/OSplayer.swf", "snow",
+                "400", "320", "8.0.0", flashvars, params);
+        </script>
+    </head>
+    <body>
+        <div id="snow">
+            <p>A video of a puppy playing in the snow</p>
+            <a href="https://get.adobe.com/flashplayer">Enable Flash</a>
+        </div>
+    </body>
+</html>
