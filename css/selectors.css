@@ -1,0 +1,12 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+}
+a {
+    color: green;
+}
+li>a {
+    color: magenta;
+}
