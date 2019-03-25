@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Table Style</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                color: #111111;
+            }
+            table.first {
+                width: 600px;
+            }
+            .first th, .first td {
+                padding: 7px 10px 10px 10px;
+            }
+            .first th {
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                font-size: 90%;
+                border-bottom: 2px solid #111111;
+                border-top: 1px solid #999;
+                text-align: left;
+            }
+            .first tr.even {
+                background-color: #efefef;
+            }
+            .first tr:hover {
+                background-color: #c3e6e5;
+            }
+            .first .money {
+                text-align: right;
+            }
+
+            .empty td {
+                border: 1px solid #0088dd;
+                padding: 15px;
+            }
+            table.empty {
+                margin: 15px;
+                display: inline-block;
+            }
+            table.empty.one {
+                empty-cells: show;
+            }
+            table.empty.two {
+                empty-cells: hide;
+            }
+
+            .border td {
+                background-color: #0088dd;
+                padding: 15px;
+                border: 2px solid black;
+            }
+            table.border {
+                display: inline-block;
+                margin: 15px;
+            }
+            table.border.two {
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>First Edition Auctions</h1>
+        <table class="first">
+            <tr>
+                <th>Author</th>
+                <th>Title</th>
+                <th class="money">Reserve Price</th>
+                <th class="money">Current Bid</th>
+            </tr>
+            <tr>
+                <td>E.E. Cummings</td>
+                <td>Tulips & Chimneys</td>
+                <td class="money">$2,000.00</td>
+                <td class="money">$2,642.50</td>
+            </tr>
+            <tr class="even">
+                <td>Charles d'Orleans</td>
+                <td>Poemes</td>
+                <td class="money"></td>
+                <td class="money">$5,866.00</td>
+            </tr>
+            <tr>
+                <td>T.S. Eliot</td>
+                <td>Poems 1909 - 1925</td>
+                <td class="money">$1,250.00</td>
+                <td class="money">$8,499.35</td>
+            </tr>
+            <tr class="even">
+                <td>Sylvia Plath</td>
+                <td>The Colossus</td>
+                <td class="money"></td>
+                <td class="money">$1,031.72</td>
+            </tr>
+        </table>
+        <table class="one empty">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td></td>
+            </tr>
+        </table>
+        <table class="two empty">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td></td>
+            </tr>
+        </table>
+        <br />
+        <table class="border one">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </table>
+        <table class="border two">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </table>
+    </body>
+</html>

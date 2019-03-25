@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>List Styles</title>
+        <style type="text/css">
+            ol {
+                list-style-type: upper-alpha;
+            }
+            ul {
+                list-style-type: disc;
+            }
+            ul > li {
+                margin: 10px 0 0 0;
+            }
+            ul > li.hot {
+                list-style-image: url("images/star.png");
+            }
+            ul.illum, ul.season {
+                width: 250px;
+            }
+            ul.illum > li, ul.season > li {
+                margin: 10px;
+            }
+            ul.illum {
+                list-style-position: inside; /* default */
+            }
+            ul.edgar {
+                width: 300px;
+                list-style: inside circle;
+            }
+            ul.edgar > li {
+                margin: 10px 0 0 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Quotes from Edgar Allan Poe</h1>
+        <ul class="edgar">
+            <li>I have great gaith in fools; self-confidence my friends call it.</li>
+            <li>All that we see or seem is but a dream within a dream.</li>
+            <li>I would define, in brief, the poetry of words as rhythmical creation of Beauty.</li>
+        </ul>
+        <h1>Illuminations</h1>
+        <ul class="illuminations illum">
+            <li>That idol, black eyes and yellow mop, without parents or court ...</li>
+            <li>Gracious son of Pan! Around your forehead crowned with flowerets ...</li>
+            <li>When the world is reduced to a single dark wood for our four ...</li>
+        </ul>
+        <h1>Season</h1>
+        <ul class="season">
+            <li>Once, if my memory serves me well, my life was a banquet ...</li>
+            <li>Hadn't I once a youth that was lovely, heroic, fabulous ...</li>
+            <li>Autumn already! - But why regret the everlasting sun if we are ...</li>
+        </ul>
+        <h1>The Complete Poems</h1>
+        <h2>Emily Dickinson</h2>
+        <ol>
+            <li>Life</li>
+            <li>Nature</li>
+            <li>Love</li>
+            <li>Time and Eternity</li>
+            <li>The Single Hound</li>
+        </ol>
+        <h1>Index of Translated Poems</h1>
+        <h2>Arthur Rimbaud</h2>
+        <ul>
+            <li>Ophelia</li>
+            <li>To Music</li>
+            <li class="hot">A Dream for Winter</li>
+            <li>Vowels</li>
+            <li>The Drunken Boat</li>
+        </ul>
+    </body>
+</html>

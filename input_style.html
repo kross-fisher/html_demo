@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Styling Text Inputs</title>
+        <style type="text/css">
+            .one input {
+                font-size: 120%;
+                color: #5a5854;
+                background-color: #f2f2f2;
+                background-repeat: no-repeat;
+                background-position: 10px 9px;
+                border: 1px solid #bdbdbd;
+                border-radius: 5px;
+                padding: 5px 5px 5px 35px;
+                display: block;
+                margin-bottom: 10px;
+            }
+            .one input:focus, .one input:hover {
+                background-color: #ffffff;
+                border: 1px solid #b1e1e4;
+                outline: none;
+            }
+            .one input#email {
+                background-image: url("images/email.png");
+            }
+            .one input#twitter {
+                background-image: url("images/twitter.png");
+            }
+            .one input#web {
+                background-image: url("images/web.png");
+            }
+            .one input#submit {
+                color: #444444;
+                text-shadow: 1px 2px 1px #ffffff;
+                padding: 5px 15px 5px 15px;
+                border-bottom: 1px solid #b2b2b2;
+                background-color: #b9e4e3;
+                background: -webkit-gradient(linear, left top, left bottom,
+                    from(#beeae9), to(#a8cfce));
+            }
+            .one input#submit:hover {
+                color: #333333;
+                border: 1px solid #a4a4a4;
+                border-top: 1px solid #b2b2b2;
+                background-color: #a0dbc4;
+                background: -webkit-gradient(linear, left top, left bottom,
+                    from(#a8cfce), to(#beeae9));
+            }
+            .two {
+                font-family: Arial, Helvetica, sans-serif;
+                color: #665544;
+            }
+            .two input {
+                border-bottom: 1px dotted #dcdcdc;
+                border-top: none;
+                border-right: none;
+                border-left: none;
+                padding: 5px;
+                width: 280px;
+                margin-bottom: 20px;
+            }
+            .two input:focus {
+                border: 1px dotted #dcdcdc;
+                outline: none;
+            }
+            .two input#submit {
+                color: #ffffff;
+                background-color: #665544;
+                border: none;
+                border-radius: 5px;
+                width: 80px;
+            }
+            .two input#submit:hover {
+                color: #665544;
+                background-color: #efefef;
+            }
+            .two fieldset {
+                width: 350px;
+                border: 1px solid #dcdcdc;
+                border-radius: 10px;
+                padding: 20px;
+                text-align: right;
+            }
+            .two legend {
+                background-color: #efefef;
+                border: 1px solid #dcdcdc;
+                border-radius: 10px;
+                padding: 10px 20px;
+                text-align: left;
+                text-transform: uppercase;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>One Form</h1>
+        <form class="one">
+            <input type="text" id="email" />
+            <input type="text" id="twitter" />
+            <input type="text" id="web" />
+            <input type="submit" value="Register" id="submit" />
+        </form>
+        <h1>Another Form</h1>
+        <form class="two">
+            <fieldset>
+                <legend>Newsletter</legend>
+                <label for="name">Name: </label><input type="text" id="name" />
+                <label for="email">Email: </label><input type="text" id="email" />
+                <input type="submit" value="Subscribe" id="submit" />
+            </fieldset>
+        </form>
+    </body>
+</html>
