@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Border Radius</title>
+        <style type="text/css">
+            p {
+                border: 5px solid #ee3e80;
+                width: 275px;
+                padding: 20px;
+                border-radius: 10px;
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+            }
+            p.empty {
+                padding: 10px;
+                width: 100px;
+                height: 100px;
+                display: inline-block;
+                margin: 20px;
+            }
+            p.one {
+                border-top-left-radius: 50px 50px;
+            }
+            p.two {
+                border-radius: 65px;
+            }
+            p.three {
+                border-radius: 60px 20px 60px 20px / 20px 60px 20px 60px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            Pet Sounds featured a number of unconventional instruments
+            such as bicycle bells, buzzing organs, harpsichord, flutes,
+            Electro-Theremin, dog whistles, trains, Hawaiian-sounding
+            string instruments, Coca-Cola cans and barking dogs.
+        </p>
+        <p class="empty one"></p>
+        <p class="empty two"></p>
+        <p class="empty three"></p>
+    </body>
+</html>
