@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Button Sprites</title>
+        <style type="text/css">
+            #src-sprite {
+                padding: 5px;
+                margin-bottom: 20px;
+            }
+            #src-sprite>img {
+                width: 385px;
+                height: 116px;
+            }
+            a.button {
+                height: 36px;
+                background-image: url("images/button-sprite.jpg");
+                display: inline-block;
+                text-indent: -9999px;
+            }
+            a#add-to-basket {
+                width: 174px;
+                background-position: 0 0;
+            }
+            a#framing-options {
+                width: 210px;
+                background-position: -175px 0;
+            }
+            a#add-to-basket:hover {
+                background-position: 0 -40px;
+            }
+            a#framing-options:hover {
+                background-position: -175px -40px;
+            }
+            a#add-to-basket:active {
+                background-position: 0 -80px;
+            }
+            a#framing-options:active {
+                background-position: -175px -80px;
+            }
+        </style>
+    </head>
+    <body>
+        <figure id="src-sprite">
+            <img src="images/button-sprite.jpg" alt="Sprite source" />
+            <figcaption>the source sprite image we're using</figcaption>
+        </figure>
+        <a class="button" id="add-to-basket">Add to basket</a>
+        <a class="button" id="framing-options">Framing options</a>
+    </body>
+</html>
