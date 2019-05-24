@@ -7,17 +7,17 @@ num3_list = {}
 random.seed(int(time.time()))
 
 while True:
-    a = random.randint(3, 9)
-    b = random.randint(2, 12-a)
+    a = random.randint(4, 13)
+    b = random.randint(3, 17-a)
     num2_list[(a,b)] = True
 
     if len(num2_list) > 24:
         break
 
 while True:
-    a = random.randint(1, 6)
-    b = random.randint(1, 8-a)
-    c = random.randint(1, 10-a-b)
+    a = random.randint(3, 10)
+    b = random.randint(2, 13-a)
+    c = random.randint(1, 16-a-b)
     num3_list[(a,b,c)] = True
 
     if len(num3_list) > 24:
@@ -48,7 +48,7 @@ print '''<!DOCTYPE html>
     <body>
         <table id="num2_quzz">''',
 for (a, b) in num2_list.keys():
-    op = '-' if a >= b and random.randint(1, 10) < 8 else '+'
+    op = '-' if a > b and random.randint(1, 10) < 8 else '+'
     #op = '+'
     #rs = eval('%d %s %d' % (a, op, b))
     print '''
@@ -66,9 +66,9 @@ print '''
         <table id="num3_quzz">''',
 for (a, b, c) in num3_list.keys():
     op1 = '-' if a >= b and random.randint(1, 10) < 8 else '+'
+    op1 = '+'
     rs1 = eval('%d %s %d' % (a, op1, b))
     op2 = '-' if rs1 >= c and random.randint(1, 10) < 8 else '+'
-    op1 = op2 = '+'
     print '''
             <tr>
                 <td>%d</td>
