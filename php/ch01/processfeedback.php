@@ -20,8 +20,6 @@ mail($to_address, $subject, $mailcontent, $from_address);
     <body>
         <h1>Feedback submitted</h1>
         <p>Your feedback has been sent.</p>
-        <?php
-            echo "<pre>$mailcontent</pre>";
-        ?>
+        <p><?php echo nl2br($mailcontent); ?></p>
     </body>
 </html>
