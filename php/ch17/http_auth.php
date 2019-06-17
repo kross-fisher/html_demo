@@ -26,3 +26,5 @@ if (($_SERVER['PHP_AUTH_USER'] != 'user')
     echo "<h1>Here it is!</h1>
         <p>I bet you are glad you can see this secret page.</p>";
 }
+
+?>
