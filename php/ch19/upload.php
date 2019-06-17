@@ -59,11 +59,12 @@
         // remove possible HTML and PHP tags from the file's contents
         $contents = file_get_contents($upfile);
         $contents = strip_tags($contents);
-        file_put_contents($$upfile, $contents);
+        file_put_contents($upfile, $contents);
 
         // show what was uploaded
         echo '<p>Preview of uploaded file contents:<br/><hr/>';
-        echo nl2br($contents);
+        //echo nl2br($contents);
+        echo '<pre>' . $contents . '</pre>';
         echo '<br/><hr/>';
         ?>
     </body>
