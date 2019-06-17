@@ -31,14 +31,9 @@
                 $host = 'localhost';
                 $db_name = 'books';
 
-                $dsn = "mysql://$user:$pass@$host/$db_name";
+                $dsn = "mysqli://$user:$pass@$host/$db_name";
 
-                $db =& MDB2::connect($dsn); // Not Fix Yet -> MDB2 Error: not found
-
-                if (PEAR::isError($db)) {
-                    echo "Pear isError **<br/>";
-                    die($db->getMessage());
-                }
+                $db = &MDB2::connect($dsn); // Not Fix Yet -> MDB2 Error: not found
 
                 if (MDB2::isError($db)) {
                     echo $db->getMessage();
@@ -56,24 +51,21 @@
                 $num_results = $result->numRows();
                 echo "<p>Number of books found: $num_results</p>";
 
-                /*
-                $dsn = "mysql:host=$host;dbname=$db_name";
-                $wildterm = "%$searchterm%";
-                try {
-                    $db = new PDO($dsn, $user, $pass);
-                    $query = "select * from books where $searchtype like :xterm";
-                    $stmt = $db->prepare($query);
-                    $stmt->bindParam(':xterm', $wildterm);
-                    $stmt->execute();
+                for ($i = 0; $i < $num_results; ++$i) {
+                    $row = $result->fetchRow(MDB2_FETCHMODE_ASSOC);
+                    echo "<p><strong>" . ($i+1) . ". ";
+                    echo htmlspecialchars(stripslashes($row['title']));
+                    echo "</strong><br />\nAuthor: ";
+                    echo stripslashes($row['author']);
+                    echo "<br />\nISBN: ";
+                    echo stripslashes($row['isbn']);
+                    echo "<br />\nPrice: ";
+                    echo stripslashes($row['price']);
+                    echo "</p>";
+                }
 
-                    $num_results = $stmt->rowCount();
-                    echo "<p>Number of books found: $num_results</p>";
-
-                } catch (PDOException $e) {
-                    echo "Error: " . $e->getMessage();
-                    exit;
-                } */
-
+                $result->close();
+                $db->disconnect();
             }
 
             function query_mysql_proc_stmt($searchtype, $searchterm) {
