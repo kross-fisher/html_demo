@@ -37,6 +37,7 @@
         // Does the file have the right MIME type?
         if ($userfile['type'] != 'text/plain') {
             echo 'Problem: file is not plain text';
+            echo '<br/>current is: ' . $userfile['type'];
             exit;
         }
 
