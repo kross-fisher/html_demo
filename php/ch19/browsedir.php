@@ -15,7 +15,7 @@
         while (false !== ($file = readdir($dir))) {
             // strip out the two entries of . and ..
             if ($file != '.' && $file != '..') {
-                echo "<li>### $file ###</li>";
+                echo "<li>$file</li>";
             }
         }
         echo '</ul>';
