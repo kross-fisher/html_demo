@@ -21,6 +21,7 @@
         echo '</ul>';
         closedir($dir); */
 
+        /*
         $dir = dir($curr_dir);
 
         echo "<p>Handle is $dir->handle</P>";
@@ -33,7 +34,31 @@
             }
         }
         echo '</ul>';
-        $dir->close();
+        $dir->close(); */
+
+        $files1 = scandir($curr_dir);
+        $files2 = scandir($curr_dir, 1);
+
+        echo "<p>Upload directory is $curr_dir</p>";
+        echo "<p>Directory Listing in alphabetical order, ascending:</p><ul>";
+
+        foreach ($files1 as $file) {
+            if ($file != '.' && $file != '..') {
+                echo "<li>$file</li>";
+            }
+        }
+        echo '</ul>';
+
+        echo "<p>Upload directory is $curr_dir</p>";
+        echo "<p>Directory Listing in alphabetical order, descending:</p><ul>";
+
+        foreach ($files2 as $file) {
+            if ($file != '.' && $file != '..') {
+                echo "<li>$file</li>";
+            }
+        }
+        echo '</ul>';
+
         ?>
     </body>
 </html>
