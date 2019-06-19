@@ -13,7 +13,7 @@
         echo "<h1>Details of file: $file</h1>";
 
         if (! file_exists($file)) {
-            echo '<p style="red">File not exist!!!</p>';
+            echo '<p style="color:red">Error: File does not exist !!!</p>';
             exit;
         }
 
