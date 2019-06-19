@@ -12,6 +12,11 @@
 
         echo "<h1>Details of file: $file</h1>";
 
+        if (! file_exists($file)) {
+            echo '<p style="red">File not exist!!!</p>';
+            exit;
+        }
+
         echo "<h2>File data:</h2>";
         echo "File last accessed: " . date('j F Y H:i', fileatime($file)) . '<br/>';
         echo "File last modified: " . date('j F Y H:i', filemtime($file)) . '<br/>';
