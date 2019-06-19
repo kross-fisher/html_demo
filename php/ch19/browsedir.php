@@ -44,7 +44,7 @@
 
         foreach ($files1 as $file) {
             if ($file != '.' && $file != '..') {
-                echo "<li>$file</li>";
+                echo "<li><a href=\"filedetails.php?file=$file\">$file</a></li>";
             }
         }
         echo '</ul>';
