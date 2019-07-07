@@ -22,8 +22,9 @@
     $font_size = 33;
 
     // you need to tell GD2 where your fonts reside
-    putenv ('GDFONTPATH=/usr/share/fonts/truetype/freefont');
-    $font_name = 'FreeSans';
+    putenv ('GDFONTPATH=/usr/share/fonts/truetype/dejavu');
+    $font_name = 'DejaVuSans';
+    // /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
 
     do {
         $font_size--;
@@ -57,7 +58,7 @@
         $above_line_text = abs($bbox[7]);  // how far above the baseline
         $text_y += $above_line_text;       // add baseline factor
 
-        $text_y += 2;   // adjustment factor for shape of our template
+        //$text_y += 2;   // adjustment factor for shape of our template
 
         $white = imagecolorallocate($im, 255, 255, 255);
 
