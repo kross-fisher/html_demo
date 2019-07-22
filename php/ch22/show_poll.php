@@ -100,8 +100,9 @@ while ($row = $result->fetch_object()) {
     // display percent for this value
     $percent_bbox = imagettfbbox($main_size, 0, $font, $percent . '%');
     $percent_length = $percent_bbox[2] - $percent_bbox[0];
+    $y_adj = ($percent_bbox[1] + $percent_bbox[7]) / -2; //$y_adj = 0;
     imagettftext($im, $main_size, 0, $width - $percent_length - $text_indent,
-                $y + $bar_height / 2, $percent_color, $font, $percent . '%');
+                $y + $bar_height / 2 + $y_adj, $percent_color, $font, $percent . '%');
 
     // lehgth of bar for this value
     $bar_length = $x + $percent * $bar_unit;
@@ -110,11 +111,11 @@ while ($row = $result->fetch_object()) {
     imagefilledrectangle($im, $x, $y-2, $bar_length, $y+$bar_height, $bar_color);
 
     // draw title for this value
-    imagettftext($im, $main_size, 0, $text_indent, $y + $bar_height / 2,
+    imagettftext($im, $main_size, 0, $text_indent, $y + $bar_height / 2 + $y_adj,
                 $text_color, $font, "$row->candidate");
 
     // display numbers
-    imagettftext($im, $small_size, 0, $x + $bar_unit*100 - 50, $y + $bar_height/2,
+    imagettftext($im, $small_size, 0, $x + $bar_unit*100 - 50, $y + $bar_height/2 + $y_adj,
                 $number_color, $font, $row->num_votes . '/' . $total_votes);
 
     // draw outline showing 100%
