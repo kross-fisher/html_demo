@@ -10,12 +10,12 @@
         $client_secret = '7843dbe00539131e85d78a2a28fc6c8bded322af';
         $callback='http://localhost/demo/oauth_demo.php';
 
-        echo '<p>Current host name: ' . $_SERVER['SERVER_NAME'] . '</p>';
+        echo '<p>Current host name: ' . $_SERVER['HTTP_HOST'] . '</p>';
 
-        if ($_SERVER['SERVER_NAME'] != 'localhost') {
+        if ($_SERVER['HTTP_HOST'] != 'localhost') {
             $client_id = '854c1d839e9326c04ac5';
             $client_secret = 'ac9fe5b29c7b01edfae3ccec205f6194854e7bde';
-            $callback='http://www.melabear.cn/demo/oauth_demo.php';
+            $callback='https://www.melabear.cn/demo/oauth_demo.php';
         }
 
         $github_login = 'https://github.com/login/oauth/authorize?'
