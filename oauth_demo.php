@@ -21,7 +21,9 @@
         $user_agent = $_SERVER['HTTP_USER_AGENT'];
 
         if (isset($_REQUEST['logout'])) {
-            echo '<p>Bye ' . $_SESSION['user_name'] . ' ~</p>';
+            if (isset($_SESSION['user_name'])) {
+                echo '<p>Bye ' . $_SESSION['user_name'] . ' ~</p>';
+            }
             session_destroy(); unset($_SESSION);
         }
 
