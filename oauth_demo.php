@@ -27,6 +27,18 @@
             session_destroy(); unset($_SESSION);
         }
 
+        $user_name  = $_SESSION['user_name'];
+        $user_login = $_SESSION['user_login'];
+        $user_email = $_SESSION['user_email'];
+
+        if (isset($user_name)) {
+            echo '<h4>Welcome, ' . $user_name . ' (' . $user_login . '), ';
+            echo 'your email is: ' . $user_email . '</h4>';
+            echo '<p><a href="/demo/oauth_demo.php?logout=1">logout</a></p>';
+            echo '</html>';
+            exit();
+        }
+
         $access_token = $_SESSION['access_token'];
 
         if (! isset($access_token)) {
@@ -84,12 +96,13 @@
         $user_name  = $user_info->name;
         $user_login = $user_info->login;
         $user_email = $user_info->email;
-        echo '<h4>Welcome, ' . $user_name . ' (' . $user_login . '), ';
-        echo 'your email is: ' . $user_email . '</h4>';
 
         $_SESSION['user_name']  = $user_name;
         $_SESSION['user_login'] = $user_login;
         $_SESSION['user_email'] = $user_email;
+
+        echo '<h4>Welcome, ' . $user_name . ' (' . $user_login . '), ';
+        echo 'your email is: ' . $user_email . '</h4>';
         echo '<p><a href="/demo/oauth_demo.php?logout=1">logout</a></p>';
     ?>
 </html>
