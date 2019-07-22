@@ -23,15 +23,15 @@
         if (isset($_REQUEST['logout'])) {
             if (isset($_SESSION['user_name'])) {
                 echo '<p>Bye ' . $_SESSION['user_name'] . ' ~</p>';
+                session_destroy(); unset($_SESSION);
             }
-            session_destroy(); unset($_SESSION);
         }
 
-        $user_name  = $_SESSION['user_name'];
-        $user_login = $_SESSION['user_login'];
-        $user_email = $_SESSION['user_email'];
+        if (isset($_SESSION['user_name'])) {
+            $user_name  = $_SESSION['user_name'];
+            $user_login = $_SESSION['user_login'];
+            $user_email = $_SESSION['user_email'];
 
-        if (isset($user_name)) {
             echo '<h4>Welcome, ' . $user_name . ' (' . $user_login . '), ';
             echo 'your email is: ' . $user_email . '</h4>';
             echo '<p><a href="/demo/oauth_demo.php?logout=1">logout</a></p>';
@@ -39,16 +39,14 @@
             exit();
         }
 
-        $access_token = $_SESSION['access_token'];
-
-        if (! isset($access_token)) {
-            $auth_code = $_REQUEST['code'];
-
-            if (! isset($auth_code)) {
+        if (! isset($_SESSION['access_token'])) {
+            if (! isset($_REQUEST['code'])) {
                 echo '<a href="' . $github_login
                     . '">Please login with your github account</a>';
                 exit();
             }
+
+            $auth_code = $_REQUEST['code'];
 
             $token_url = 'https://github.com/login/oauth/access_token'
                         . '?client_id=' . $client_id
@@ -75,6 +73,7 @@
                 $_SESSION['access_token'] = $access_token;
             }
         } else {
+            $access_token = $_SESSION['access_token'];
             echo '<p>Reusing existing token: ' . $access_token . '</p>';
         }
 
