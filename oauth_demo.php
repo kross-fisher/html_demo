@@ -10,8 +10,6 @@
         $client_secret = '7843dbe00539131e85d78a2a28fc6c8bded322af';
         $callback='http://localhost/demo/oauth_demo.php';
 
-        echo '<p>Current host name: ' . $_SERVER['HTTP_HOST'] . '</p>';
-
         if ($_SERVER['HTTP_HOST'] != 'localhost') {
             $client_id = '854c1d839e9326c04ac5';
             $client_secret = 'ac9fe5b29c7b01edfae3ccec205f6194854e7bde';
@@ -23,7 +21,7 @@
         $user_agent = $_SERVER['HTTP_USER_AGENT'];
 
         if (isset($_REQUEST['logout'])) {
-            echo '<p>Bye, ' . $_SESSION['user_name'] . ' ~</p>';
+            echo '<p>Bye ' . $_SESSION['user_name'] . ' ~</p>';
             session_destroy(); unset($_SESSION);
         }
 
