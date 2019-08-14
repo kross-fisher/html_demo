@@ -23,9 +23,13 @@
         if (isset($_REQUEST['logout'])) {
             if (isset($_SESSION['user_name'])) {
                 echo '<p>Bye ' . $_SESSION['user_name'] . ' ~</p>';
-                session_destroy(); unset($_SESSION);
+                unset($_SESSION['access_token']);
+                unset($_SESSION['user_name']);
+                session_destroy();
             }
         }
+
+        echo '<p>Session ID is: ' . $_COOKIE['PHPSESSID'] . '</p>';
 
         if (isset($_SESSION['user_name'])) {
             $user_name  = $_SESSION['user_name'];
